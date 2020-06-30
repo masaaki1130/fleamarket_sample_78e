@@ -51,7 +51,6 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 |user_id|references|null: false, foreign_key: true|
 |card_token|integer|null: false|
 |card_token|date|null: false|
-|card_token|integer|null: false|
 |card_token|string|null: false|
 ### Association
 - belongs_to :user
