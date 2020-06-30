@@ -17,7 +17,7 @@
 - has_many :purchases
 - has_many :streets
 
-### streetsテーブル
+### addressesテーブル
 |user_id|references|null: false, foreign_key: true|
 |postal|integer|null: false|
 |prefectures|string|null: false|
@@ -53,7 +53,6 @@
 ### productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
 |name|string|null: false|
 |text|text|null: false|
 |category_id|references|null: false, foreign_key: true|
@@ -70,7 +69,7 @@
 - belongs_to :user
 - belongs_to :brand
 - belongs_to :category
-- belongs_to :image
+- has_many :image
 
 ###　imagesテーブル
 |Column|Type|Options|
@@ -78,7 +77,7 @@
 |image|string|null: false|
 |product_id|references|null: false, foreign_key: true|
 ### Association
-- has_many :products
+- belongs_to :products
 
 ### brandsテーブル
 |Column|Type|Options|
