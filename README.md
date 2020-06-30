@@ -1,3 +1,4 @@
+https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 ### usersテーブル
 
 |Column|Type|Options|
@@ -57,19 +58,45 @@
 |text|text|null: false|
 |category_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
-|status|string|null: false|
+|sell|boolean|null: false|
 |charges|string|null: false|
 |price|integer|null: false|
 |postage|string|null: false|
-|area|string|null: false|
-|day|string|null: false|
 |user_id|references|null: false, foreign_key: true|
-|sell|boolean|null: false|
+|status_id|references|null: false, foreign_key: true|
+|area_id|references|null: false, foreign_key: true|
+|day_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :brand
 - belongs_to :category
-- has_many :image
+- belongs_to :status
+- belongs_to :area
+- belongs_to :day
+- has_many :images
+### statusesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|status|string|null: false|
+
+### Association
+- has_many :products
+
+###  areasテーブル
+|Column|Type|Options|
+|------|----|-------|
+|area|string|null: false|
+
+### Association
+- has_many :products
+
+###  daysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|day|string|null: false|
+
+### Association
+- has_many :products
 
 ###　imagesテーブル
 |Column|Type|Options|
