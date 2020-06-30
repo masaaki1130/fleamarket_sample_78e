@@ -15,7 +15,7 @@
 - has_many :purchases
 - has_many :cards
 - has_many :purchases
-- has_many :streets
+- has_many :addresses
 
 ### addressesテーブル
 |user_id|references|null: false, foreign_key: true|
@@ -77,7 +77,7 @@
 |image|string|null: false|
 |product_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :products
+- belongs_to :product
 
 ### brandsテーブル
 |Column|Type|Options|
