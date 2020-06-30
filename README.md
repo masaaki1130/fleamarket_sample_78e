@@ -26,7 +26,7 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 |postal|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
-|house_number|integer|null: false|
+|address|integer|null: false|
 |building|string||
 |room_number|integer||
 |phone_number|integer||
@@ -69,28 +69,18 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 |postage|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 |status_id|references|null: false, foreign_key: true|
-|area_id|references|null: false, foreign_key: true|
 |day_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :brand
 - belongs_to :category
 - belongs_to :status
-- belongs_to :area
 - belongs_to :day
 - has_many :images
 ### statusesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |status|string|null: false|
-
-### Association
-- has_many :products
-
-###  areasテーブル
-|Column|Type|Options|
-|------|----|-------|
-|area|string|null: false|
 
 ### Association
 - has_many :products
