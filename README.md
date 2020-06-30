@@ -11,16 +11,21 @@
 |firstname_kana|string|null: false|
 |birthday|date|null: false|
 |phone_number|integer|null: false|
-|card_id|references|null: false, foreign_key: true|
+### Association
+- has_many :purchases
+- has_many :cards
+- has_many :purchases
+- has_many :streets
+
+### streetsテーブル
+|user_id|references|null: false, foreign_key: true|
 |postal|integer|null: false|
 |prefectures|string|null: false|
 |municipalities|string|null: false|
 |address|integer|null: false|
 |building|string||
 ### Association
-- has_many :purchases
-- has_many :cards
-- has_many :purchases
+- belongs_to :user
 
 ### purchasesテーブル
 
@@ -28,9 +33,10 @@
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |product_id|references|null: false, foreign_key: true|
-|card_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
+- belongs_to :user
+- belongs_to :product
+
 
 ### cardsテーブル
 
@@ -42,7 +48,7 @@
 |Security|integer|null: false|
 |name|string|null: false|
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ### productsテーブル
 |Column|Type|Options|
@@ -59,20 +65,31 @@
 |area|string|null: false|
 |day|string|null: false|
 |user_id|references|null: false, foreign_key: true|
+|sell|boolean|null: false|
 ### Association
-- belongs_to :users
-- has_many :brands
-- has_many :categorys
+- belongs_to :user
+- belongs_to :brand
+- belongs_to :category
+- belongs_to :image
+
+###　imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|product_id|references|null: false, foreign_key: true|
+### Association
+- has_many :products
+
 ### brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- belongs_to :products
+- has_many :products
 
 ### categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- belongs_to :products
+- has_many :products
