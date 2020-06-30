@@ -15,16 +15,21 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 ### Association
 - has_many :purchases
 - has_many :cards
-- has_many :purchases
 - has_many :addresses
 
 ### addressesテーブル
+|familyname|string|null: false|
+|familyname_kana|string|null: false|
+|firstname|string|null: false|
+|firstname_kana|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 |postal|integer|null: false|
-|prefectures|string|null: false|
-|municipalities|string|null: false|
-|address|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|house_number|integer|null: false|
 |building|string||
+|room_number|integer||
+|phone_number|integer||
 ### Association
 - belongs_to :user
 
@@ -113,7 +118,7 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 ### Association
 - has_many :products
 
-### categorysテーブル
+### categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
