@@ -66,6 +66,7 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 |charges|string|null: false|
 |price|integer|null: false|
 |postage|string|null: false|
+|area|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 |status_id|references|null: false, foreign_key: true|
 |day_id|references|null: false, foreign_key: true|
