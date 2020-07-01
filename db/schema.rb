@@ -24,10 +24,8 @@ ActiveRecord::Schema.define(version: 2020_06_30_101115) do
     t.string "building_name"
     t.integer "room_number"
     t.integer "phone_number"
-    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
