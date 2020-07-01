@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_06_30_101115) do
 
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
     t.string "given_name", null: false
     t.string "family_name_kana", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_06_30_101115) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
     t.string "name", null: false
     t.text "text", null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_06_30_101115) do
     t.index ["user_id_id"], name: "index_products_on_user_id_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
