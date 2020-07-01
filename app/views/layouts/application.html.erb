@@ -11,7 +11,7 @@
   <body>
     <header class="header">
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">PicTweet</a></h1>
+        <h1 class="grid-6"><a href="/">FURIMA</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -20,15 +20,18 @@
         <% else %>
           <div class="grid-6">
             <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+            <%= link_to "新規会員登録", new_user_registration_path, class: 'post' %>
           </div>
         <% end %>
       </div>
     </header>
       <%= yield %>
     <footer>
+      <h3>
+        FURIMA
+      </h3>
       <p>
-        Copyright PicTweet 2019.
+        FURIMA
       </p>
     </footer>
   </body>
