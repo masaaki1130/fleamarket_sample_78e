@@ -3,7 +3,7 @@ lock '3.14.1'
 
 # 自身のアプリ名、リポジトリ名を記述
 set :application, 'fleamarket_sample_78e'
-set :repo_url,  'https://github.com/masaaki1130/fleamarket_sample_78e'
+set :repo_url,  'https://github.com/masaaki1130/fleamarket_sample_78e.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
