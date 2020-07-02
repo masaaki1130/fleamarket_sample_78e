@@ -1,0 +1,29 @@
+.header
+  .headerIn
+    .headermain
+      .headericon
+        = link_to root_path do
+          = image_tag ("logo.png")
+    .searchbar
+      -# = form_with url: root_path, do |f|
+        -# = f.text_field :keyword, placeholder: "キーワードから探す", class: "searchbar-input"
+        -# = button_tag type: 'submit', class: 'search-btn' do
+      = icon('fas', 'search')
+    .tag
+      %ul.lefttag
+        %li.lefttag__item.leftta__item--first
+          = link_to "カテゴリ", "#", method: :delete, class: "post"
+        %li.lefttag__item
+          = link_to  "ブランド", "#", class: "post"
+      - if user_signed_in?
+        %ul.righttag
+          %li.righttag__item.righttag__item--login
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+          %li.righttag__item.righttag__item--new
+            = link_to  "投稿する", new_tweet_path, class: "post"
+      - else
+        %ul.righttag
+          %li.righttag__item
+            = link_to "ログイン", new_user_session_path, class: 'post'
+          %li.righttag__item
+            = link_to "新規会員登録", new_user_registration_path, class: 'post'
