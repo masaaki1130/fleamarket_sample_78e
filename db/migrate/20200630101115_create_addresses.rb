@@ -12,6 +12,7 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string :building_name
       t.integer :room_number
       t.integer :phone_number
+      t.references :user, foreign_key: true
       t.timestamps
     end
   end
