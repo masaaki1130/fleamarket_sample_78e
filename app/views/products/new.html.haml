@@ -1,0 +1,35 @@
+.head-contents
+.main-contents
+  .main-contents__image
+    .main-contents__image__title 出品画像
+    = f.label :image, class: 'main-contents__image__photo'
+  .main-contents__product-name
+    .main-contents__product-name__title 商品名
+    = f.text_field :name, class: 'main-contents__product-name__text'
+  .main-contents__explanation
+    .main-contents__explanation__title 商品の説明
+    = f.text_area :text, class: 'main-contents__explanation__text'
+  .main-contents__category
+    .main-contents__category__title カテゴリー
+    = f.select :category_id, [], {}, {class: 'main-contents__category__text'}
+  .main-contents__brand
+    .main-contents__brand__title ブランド
+    = f.select :brand_id, [], {}, {class: 'main-contents__brand__text'}
+  .main-contents__status
+    .main-contents__status__title 商品の状態
+    = f.select :status_id, [], {}, {class: 'main-contents__status__text'}
+  .main-contents__postage
+    .main-contents__postage__title 配送料の負担
+    = f.label :postage, class: 'main-contents__postage__text'
+  .main-contents__area
+    .main-contents__area__title 発送元の地域
+    = f.select :area_id, [], {}, {class: 'main-contents__area__text'}
+  .main-contents__day
+    .main-contents__day__title 発送までの日数
+    = f.select :aday_id, [], {}, {class: 'main-contents__day__text'}
+  .main-contents__price
+    .main-contents__price__title 価格設定
+    = f.label :price, class: 'main-contents__price__text'
+  .main-contents__button
+    = f.submit '出品する', class: 'main-contents__button__sell'
+.bottom-contents
