@@ -18,6 +18,4 @@ class User < ApplicationRecord
   has_many :purchases
   has_many :products
   has_many :addresses
-
-
 end
