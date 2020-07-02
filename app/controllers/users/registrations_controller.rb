@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-class Users
-  class RegistrationsController < Devise::RegistrationsController
+  class Users::RegistrationsController < Devise::RegistrationsController
     # before_action :configure_permitted_parameters, only: [:create]
     # before_action :configure_account_update_params, only: [:update]
 
@@ -10,4 +9,3 @@ class Users
       @user = User.new
     end
   end
-end
