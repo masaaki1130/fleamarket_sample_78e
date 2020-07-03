@@ -6,7 +6,7 @@
   margin-right: 20px;
 }
 
-@mixin registerbox { 
+@mixin registerbox {
   height: 20px;
   width: 321px;
   padding: 10px 10px 8px;
@@ -102,13 +102,12 @@
         border: 1px solid #ccc;
         border-radius: 4px;
       }
-      
 
       &__any {
         background-color: #ccc;
         @include required-or-any
       }
-      
+
       &__name-left {
         margin-right: 6px;
         @include registerbox_name
