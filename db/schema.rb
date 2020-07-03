@@ -34,20 +34,20 @@ ActiveRecord::Schema.define(version: 2020_06_30_101115) do
     t.string "image", null: false
     t.string "name", null: false
     t.text "text", null: false
-    t.bigint "category_id_id", null: false
-    t.bigint "brand_id_id"
+    t.bigint "category_id", null: false
+    t.bigint "brand_id"
     t.string "status", null: false
     t.string "charges", null: false
     t.integer "price", null: false
     t.string "postage", null: false
     t.string "area", null: false
     t.string "day", null: false
-    t.bigint "user_id_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["brand_id_id"], name: "index_products_on_brand_id_id"
-    t.index ["category_id_id"], name: "index_products_on_category_id_id"
-    t.index ["user_id_id"], name: "index_products_on_user_id_id"
+    t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
