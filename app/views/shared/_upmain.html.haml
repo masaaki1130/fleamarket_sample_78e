@@ -1,9 +1,13 @@
 .upmain
-  .upcontent
-    %h2.upcontent__subtitle
-      人生を変えるフリマアプリ
-    %p.upcontent__text
-      FURIMAは誰でも簡単に出品・購入できる
-      %br
-      フリマアプリです
-    
+  .upcomment
+    .upcontent
+      .upcontent__subtitle 
+        %p 人生を変えるフリマアプリ
+      .upcontent__text
+        %p FURIMAは誰でも簡単に出品・購入できる
+        %p フリマアプリです
+      .upcontent__btn
+        = link_to "#", class: "icon" do
+          = image_tag "Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg",class: "appBtn"
+        = link_to "#", class: "icon" do
+          = image_tag "google-play-badge.png",class: "googleBtn"
