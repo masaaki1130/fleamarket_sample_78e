@@ -12,7 +12,7 @@
           必須
         %br
         = f.text_field :nickname, {placeholder: "例）フリマ太郎",class:'input__group__content__box'}
-        
+
       .input__group__content
         %label.input__group__content__label
           メールアドレス
@@ -20,7 +20,7 @@
           必須
         %br
         = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: "例）hurima@hurima.com",class:'input__group__content__box'}
-      
+
       .input__group__content
         %label.input__group__content__label
           パスワード
@@ -28,7 +28,7 @@
           必須
         %br
         = f.password_field :password,{autocomplete: "new-password",placeholder: "7文字以上の半角英数字",class:'input__group__content__box',id:"password"}
-        
+
         .input__group__content
         %label.input__group__content__label
           パスワード
@@ -36,7 +36,7 @@
           確認
         %br
         = f.password_field :password_confirmation,{autocomplete: "new-password",placeholder: "7文字以上の半角英数字",class:'input__group__content__box',id:"password"}
-        
+
       .input__group__content
         %label.input__group__content__label
           お名前（全角）
@@ -62,4 +62,3 @@
         = f.date_field :birth_day, {class: "input__group__content__box"}
       .input__group__content__btn
         = f.submit '登録', class: "input__group__content__btn__tag"
-        
