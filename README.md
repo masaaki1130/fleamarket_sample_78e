@@ -18,6 +18,9 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 - has_many :addresses
 
 ### addressesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
 |family_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name|string|null: false|
