@@ -1,0 +1,18 @@
+.container-main__button {
+  background-color: #fff;
+  height: 150px;
+  margin-top: 40px;
+  position: relative;
+  p {
+    list-style: none;
+    color: #fff;
+    position: absolute;
+    background-color: #3ccace;
+    padding: 12px 120px;
+    top: 70px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+  }
+}

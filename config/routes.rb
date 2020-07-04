@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   }
   root 'items#index'
   resources :products, only: [:new, :create]
-  resources :users
+  resources :users, only: :show
+  resources :card, only: :index
+  resources :mypage
+  resources :logout, only: :index
 end
