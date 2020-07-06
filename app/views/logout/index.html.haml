@@ -1,0 +1,8 @@
+.body
+  .container
+    .container-main
+      = link_to destroy_user_session_path, method: :delete do
+        .container-main__button
+          %p ログアウト
+    = render 'mypage/side-bar'
+

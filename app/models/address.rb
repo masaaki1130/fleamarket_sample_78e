@@ -8,4 +8,5 @@ class Address < ApplicationRecord
   validates :family_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :given_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
 
+  belongs_to :user
 end

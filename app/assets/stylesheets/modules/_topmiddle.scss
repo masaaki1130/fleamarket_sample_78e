@@ -1,0 +1,39 @@
+.topmiddle {
+  background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+  background-position: bottom right;
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+
+  &__in {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__subtitle{
+    font-size: 18px;
+    font-weight: bold;
+  }
+  &__text{
+    font-size: 18px;
+    margin: 20px 0;
+  }
+
+  &__btn {
+    display: flex;
+  }
+}
+
+.subtitle2 {
+  font-size: 27px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.subtitle:after {
+  content: none;
+}
