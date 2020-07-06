@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
 
-  belongs_to :user_id
-  belongs_to :category_id
+  belongs_to user, foregin_key: 'user_id'
+  belongs_to :category
   belongs_to :brand_id
 
   validates :name, presence: true

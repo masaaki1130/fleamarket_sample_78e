@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
+  before_action :set_ancestry
 
   private
   def production?
@@ -11,4 +12,9 @@ class ApplicationController < ActionController::Base
       password == Rails.application.credentials[:basic_auth][:pass]
     end
   end
+
+  def set_ancestry
+    @parent = Category.where(ancestry: nil)
+  end
+  
 end
