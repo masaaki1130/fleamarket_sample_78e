@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
 
-  belongs_to :user_id
-  belongs_to :category_id
-  belongs_to :brand_id
+  belongs_to :user
+  belongs_to :category
+  belongs_to :brand
 
   validates :name, presence: true
   validates :image, presence: true
