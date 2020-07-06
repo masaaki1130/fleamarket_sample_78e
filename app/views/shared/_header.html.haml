@@ -20,7 +20,7 @@
           %li.righttag__item.righttag__item--login
             = link_to "ログアウト", destroy_user_session_path, method: :delete
           %li.righttag__item.righttag__item--new
-            = link_to  "投稿する", new_tweet_path, class: "post"
+            = link_to  "マイページ", mypage_index_path, class: "post"
       - else
         %ul.righttag
           %li.righttag__item
