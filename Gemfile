@@ -66,6 +66,7 @@ gem 'ancestry'
 gem 'carrierwave'
 gem 'devise'
 gem 'font-awesome-sass'
+gem 'jquery-rails'
 gem "haml-rails"
 gem 'mini_magick'
 gem 'payjp'
