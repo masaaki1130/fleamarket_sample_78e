@@ -1,0 +1,29 @@
+.topkey{
+  background: #fff;;
+  padding: 60px 20px;
+}
+.list__texts{
+  margin: 38px 0 10px;
+  font-size: 19px;
+  font-weight: bold;
+}
+.subtitle3 {
+  text-align: center;
+  font-size: 26px;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.subtitle3::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background-color: #3CCACE;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
