@@ -1,0 +1,53 @@
+.main{
+  background: #f8f8f8;
+}
+.upmain {
+  background: #f8f8f8;
+}
+
+.upcomment {
+  height: 560px;
+  background-image: url(/assets/bg-mainVisual-pict_pc.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+}
+
+.upcontent {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 35px 0 0 0;
+
+  &__subtitle {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    font-size: 60px;
+    line-height: 1.2;
+    color: #fff;
+  }
+    &__text {
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.77778;
+      margin: 16px 0 0 0;
+    }
+    &__btn{
+      display: flex;
+      margin: 24px 0 0 0;
+    }
+  }
+.appBtn{
+  width: auto;
+  height: 53px;
+}
+.googleBtn{
+  width: auto;
+  height: 80px;
+  position: relative;
+  top: -12px;
+}
