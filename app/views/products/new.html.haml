@@ -1,35 +1,63 @@
-.head-contents
-.main-contents
-  .main-contents__image
-    .main-contents__image__title 出品画像
-    = f.label :image, class: 'main-contents__image__photo'
-  .main-contents__product-name
-    .main-contents__product-name__title 商品名
-    = f.text_field :name, class: 'main-contents__product-name__text'
-  .main-contents__explanation
-    .main-contents__explanation__title 商品の説明
-    = f.text_area :text, class: 'main-contents__explanation__text'
-  .main-contents__category
-    .main-contents__category__title カテゴリー
-    = f.select :category_id, [], {}, {class: 'main-contents__category__text'}
-  .main-contents__brand
-    .main-contents__brand__title ブランド
-    = f.select :brand_id, [], {}, {class: 'main-contents__brand__text'}
-  .main-contents__status
-    .main-contents__status__title 商品の状態
-    = f.select :status_id, [], {}, {class: 'main-contents__status__text'}
-  .main-contents__postage
-    .main-contents__postage__title 配送料の負担
-    = f.label :postage, class: 'main-contents__postage__text'
-  .main-contents__area
-    .main-contents__area__title 発送元の地域
-    = f.select :area_id, [], {}, {class: 'main-contents__area__text'}
-  .main-contents__day
-    .main-contents__day__title 発送までの日数
-    = f.select :aday_id, [], {}, {class: 'main-contents__day__text'}
-  .main-contents__price
-    .main-contents__price__title 価格設定
-    = f.label :price, class: 'main-contents__price__text'
-  .main-contents__button
-    = f.submit '出品する', class: 'main-contents__button__sell'
-.bottom-contents
+%head
+  %meta{"charset":"UTF-8"}
+  %link{"href": "products.css", "rel": "stylesheet"}
+  %title Furima
+%body
+  .main
+    .main-contents
+      = form_with model: @product, class:'main-contents__image', local: true do |f|
+        %ul.main-contents__image__title
+          %li.main-contents__image__title__main 出品画像
+          %li.main-contents__image__title__sub 必須
+        = f.fields_for :images do |i|
+          =i.file_field :image, class:'main-contents__image__photo'
+      .main-contents__product
+        = form_with model: @product, class:'main-contents__product-name', local: true do |f|
+          %ul.main-contents__product-name__title
+            %li.main-contents__product-name__title__main 商品名
+            %li.main-contents__product-name__title__sub 必須
+          = f.text_field :name, class: 'main-contents__product-name__text'
+        = form_with model: @product, class:'main-contents__product-explanation', local: true do |f|
+          %ul.main-contents__product-explanation__title
+            %li.main-contents__product-explanation__title__main 商品の説明
+            %li.main-contents__product-explanation__title__sub 必須
+          = f.text_area :text, class: 'main-contents__product-explanation__text'
+      .main-contents__detail
+        = form_with model: @product, class:'main-contents__detail__category', local: true do |f|
+          %ul.main-contents__detail__category__title
+            %li.main-contents__detail__category__title__main カテゴリー
+            %li.main-contents__detail__category__title__sub 必須
+          = f.text_field :category_id, class: 'main-contents__detail__category__text'
+        = form_with model: @product, class:'main-contents__detail__brand', local: true do |f|
+          %ul.main-contents__detail__brand__title
+            %li.main-contents__detail__brand__title__main ブランド
+            %li.main-contents__detail__brand__title__sub 任意
+          = f.collection_select :brand_id, Brand.all, :id, :name, {include_blank: "選択して下さい"}, {class: 'main-contents__detail__brand__text'}
+        = form_with model: @product, class:'main-contents__detail__status', local: true do |f|
+          %ul.main-contents__detail__status__title
+            %li.main-contents__detail__status__title__main 商品の状態
+            %li.main-contents__detail__status__title__sub 必須
+          = f.collection_select :status_id, Status.all, :id, :name, {include_blank: "選択して下さい"}, {class: 'main-contents__detail__status__text'}
+      .main-contents__shipping
+        = form_with model: @product, class:'main-contents__shipping__postage', local: true do |f|
+          %ul.main-contents__shipping__postage__title
+            %li.main-contents__shipping__postage__title__main 配送料の負担
+            %li.main-contents__shipping__postage__title__sub 必須
+          = f.select :postage, {'送料込み(出品者負担)': 1, '着払い(購入者負担)': 2}, { include_blank: '選択して下さい'}, {class: 'main-contents__shipping__postage__text'}
+        = form_with model: @product, class:'main-contents__shipping__area', local: true do |f|
+          %ul.main-contents__shipping__area__title
+            %li.main-contents__shipping__area__title__main 発送元の地域
+            %li.main-contents__shipping__area__title__sub 必須
+          = f.collection_select :area, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}, {class: 'main-contents__shipping__area__text'}
+        = form_with model: @product, class:'main-contents__shipping__day', local: true do |f|
+          %ul.main-contents__shipping__day__title
+            %li.main-contents__shipping__day__title__main 発送までの日数
+            %li.main-contents__shipping__day__title__sub 必須
+          = f.collection_select :day_id, Day.all, :id, :name, {include_blank: "選択して下さい"}, {class: 'main-contents__shipping__day__text'}
+      = form_with model: @product, class:'main-contents__price', local: true do |f|
+        %ul.main-contents__price__title
+          %li.main-contents__price__title__main 価格設定
+          %li.main-contents__price__title__sub 必須
+        = f.text_field :price, class: 'main-contents__price__text'
+      = form_with model: @product, class:'main-contents__button', local: true do |f|
+        = f.submit '出品する', class: 'main-contents__button__sell'
