@@ -16,28 +16,3 @@
   = render 'shared/header'
   = yield
   = render 'shared/footer'
-
-    %header.header
-      .header__bar.row
-        %h1.grid-6
-          %a{:href => "/"} FURIMA
-          - if user_signed_in?
-            %ul.lists__right
-              %li.lists__right__item.lists__right__item--login
-                = link_to "マイページ", mypage_index_path, method: :get, class: 'items'
-              %li.lists__right__item.lists__right__item--new
-                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'items'
-
-          - else
-            %ul.lists__right
-              %li.lists__right__item.lists__right__item--login
-                = link_to "ログイン", new_user_session_path, class: 'items'
-              %li.lists__right__item.lists__right__item--new
-                = link_to "新規会員登録", new_user_registration_path, class: 'items'
-    = yield
-    %footer
-      %h3
-        FURIMA
-      %p
-        FURIMA
-
