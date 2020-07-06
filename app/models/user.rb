@@ -13,4 +13,9 @@ class User < ApplicationRecord
   validates :family_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: "全角カタカナのみ使えます" }
   validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: "全角カタカナのみ使えます" }
   validates :birth_day, presence: true
+
+  has_many :cards
+  has_many :purchases
+  has_many :products
+  has_many :addresses
 end
