@@ -68,6 +68,7 @@ gem 'devise'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem "haml-rails"
+gem 'jquery-rails'
 gem 'mini_magick'
 gem 'payjp'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
