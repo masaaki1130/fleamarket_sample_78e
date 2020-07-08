@@ -9,14 +9,13 @@ Rails.application.routes.draw do
 
   root 'items#index'
 
-  resources :user
-
   resources :products, only: [:new, :create] do
-  collection do
-    get 'search'
-  end
+    collection do
+      get 'search'
+    end
   end
 
+  resources :user
   resources :card, only: :index
   resources :mypage
   resources :logout, only: :index
