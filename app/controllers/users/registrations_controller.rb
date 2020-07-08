@@ -14,7 +14,7 @@ module Users
       flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
-    session["devise.regist_data"] = {user: @user.attributes}
+    session["devise.regist_data"] = { user: @user.attributes }
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
     @address = @user.addresses.new
     render :new_destinations
