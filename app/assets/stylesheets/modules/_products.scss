@@ -5,20 +5,22 @@
   background-color: #efefef;
   color: rgb(51, 51, 51);
   font-size: 14px;
-  
+
   &-contents {
     position: relative;
     max-width: 700px;
     width: 100%;
     margin: 0px auto;
     background-color: rgb(255, 255, 255);
-    
+
     &__image {
       padding: 40px;
       border-bottom: 1px solid #efefef;
+
       &__title {
         display: flex;
         margin-bottom: 40px;
+
         &__sub {
           color: white;
           padding: 0px 3px;
@@ -27,18 +29,21 @@
           margin-left: 5px;
         }
       }
-      &__photo {
-        
-      }
+
+      &__photo {}
     }
+
     &__product {
       padding: 40px;
       border-bottom: 1px solid #efefef;
       position: relative;
-      &-name{
+
+      &-name {
         padding-bottom: 40px;
+
         &__title {
           display: flex;
+
           &__sub {
             color: white;
             padding: 0px 3px;
@@ -47,6 +52,7 @@
             margin-left: 5px;
           }
         }
+
         &__text {
           margin-top: 16px;
           border: 1px solid #ccc;
@@ -56,12 +62,14 @@
           width: 100%;
           outline: none;
           padding: 0 16px;
-          
+
         }
       }
+
       &-explanation {
         &__title {
           display: flex;
+
           &__sub {
             color: white;
             padding: 0px 3px;
@@ -70,6 +78,7 @@
             margin-left: 5px;
           }
         }
+
         &__text {
           margin-top: 16px;
           border: 1px solid #ccc;
@@ -83,14 +92,18 @@
         }
       }
     }
+
     &__detail {
       padding: 40px;
       border-bottom: 1px solid #efefef;
       position: relative;
+
       &__category {
         padding-bottom: 40px;
+
         &__title {
           display: flex;
+
           &__sub {
             color: white;
             padding: 0px 3px;
@@ -99,6 +112,7 @@
             margin-left: 5px;
           }
         }
+
         &__text {
           margin-top: 16px;
           border: 1px solid #ccc;
@@ -110,10 +124,13 @@
           padding: 0 16px;
         }
       }
+
       &__brand {
         padding-bottom: 40px;
+
         &__title {
           display: flex;
+
           &__sub {
             color: white;
             padding: 0px 3px;
@@ -122,6 +139,7 @@
             margin-left: 5px;
           }
         }
+
         &__text {
           margin-top: 16px;
           border: 1px solid #ccc;
@@ -133,9 +151,11 @@
           padding: 0 16px;
         }
       }
+
       &__status {
         &__title {
           display: flex;
+
           &__sub {
             color: white;
             padding: 0px 3px;
@@ -144,6 +164,7 @@
             margin-left: 5px;
           }
         }
+
         &__text {
           margin-top: 16px;
           border: 1px solid #ccc;
@@ -156,14 +177,18 @@
         }
       }
     }
+
     &__shipping {
       padding: 40px;
       border-bottom: 1px solid #efefef;
       position: relative;
+
       &__postage {
         padding-bottom: 40px;
+
         &__title {
           display: flex;
+
           &__sub {
             color: white;
             padding: 0px 3px;
@@ -172,6 +197,7 @@
             margin-left: 5px;
           }
         }
+
         &__text {
           margin-top: 16px;
           border: 1px solid #ccc;
@@ -183,10 +209,13 @@
           padding: 0 16px;
         }
       }
+
       &__area {
         padding-bottom: 40px;
+
         &__title {
           display: flex;
+
           &__sub {
             color: white;
             padding: 0px 3px;
@@ -195,6 +224,7 @@
             margin-left: 5px;
           }
         }
+
         &__text {
           margin-top: 16px;
           border: 1px solid #ccc;
@@ -206,9 +236,11 @@
           padding: 0 16px;
         }
       }
+
       &__day {
         &__title {
           display: flex;
+
           &__sub {
             color: white;
             padding: 0px 3px;
@@ -217,6 +249,7 @@
             margin-left: 5px;
           }
         }
+
         &__text {
           margin-top: 16px;
           border: 1px solid #ccc;
@@ -229,16 +262,19 @@
         }
       }
     }
+
     &__price {
       padding: 40px;
       border-bottom: 1px solid #efefef;
       position: relative;
       display: flex;
       justify-content: space-between;
+
       &__title {
         display: flex;
         align-items: center;
         line-height: 20px;
+
         &__sub {
           color: white;
           padding: 0px 3px;
@@ -247,6 +283,7 @@
           margin-left: 5px;
         }
       }
+
       &__text {
         margin-top: 16px;
         border: 1px solid #ccc;
@@ -257,16 +294,21 @@
         padding: 0 16px;
       }
     }
+
     &__button {
-      padding: 40px;
-      border-bottom: 1px solid #efefef;
+      width: 360px;
+      margin: 40px auto;
       position: relative;
       display: flex;
       align-items: center;
+
       &__sell {
+        font-size: 17px;
+        min-height: 48px;
+        width: 100%;
         color: white;
         padding: 0px 3px;
-        border-radius: 2px;
+        border-radius: 4px;
         background-color: red;
         outline: none;
       }
