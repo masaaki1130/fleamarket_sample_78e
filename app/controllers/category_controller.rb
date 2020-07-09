@@ -7,6 +7,5 @@ class CategoryController < ApplicationController
       =child.name
     - child.children.each do |grandchild|
       =grandchild.name
-
   end
 end
