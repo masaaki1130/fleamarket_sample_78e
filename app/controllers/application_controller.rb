@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
+  before_action :set_ancestry
   before_action :configure_permitted_parameters, if: :devise_controller?
+
 
   private
   def production?
@@ -11,6 +13,14 @@ class ApplicationController < ActionController::Base
       username == Rails.application.credentials[:basic_auth][:user] &&
       password == Rails.application.credentials[:basic_auth][:pass]
     end
+  end
+
+  def set_ancestry
+    @parent = Category.where(ancestry: nil)
+  end
+
+  def after_sign_out_path_for(resource)
+    root_path
   end
 
   protected
