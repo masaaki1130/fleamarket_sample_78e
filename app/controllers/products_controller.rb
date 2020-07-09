@@ -15,7 +15,6 @@ class ProductsController < ApplicationController
       render :new
     end
   end
-
   private
   def product_params
     params.permit(:name, :text, :category_id, :charges, :price, :postage, :area, :user_id, brand_id: [:product_id], status_id: [:product_id], day_id: [:product_id])
