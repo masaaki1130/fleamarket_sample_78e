@@ -1,0 +1,29 @@
+.visibleTree
+  %ul.firstMenu__parents
+    - @parent.each do |parent|
+      %li.firstMenu__parents__parent
+        = link_to "#{parent.name}", "#", class: "item-link" 
+
+          %ul.secondMenu__children
+            - parent.children.each do |child|
+              %li.secondMenu__children__child
+                = link_to "#{child.name}", "#", class: "item-link" 
+
+                  %ul.thirdMenu__grandchildren
+                    - child.children.each do |grandchildren|
+                      %li.thirdMenu__grandchildren__grandchild
+                        = link_to "#{grandchildren.name}", "#", class: "item-link" 
+
+
+
+
+                                          %ul.category__child.category__list
+                    - parent.children.each do |child|
+                      %li
+                        = link_to "#", class: "category__child--name" do
+                          = child.name
+                        %ul.category__grandchild.category__list
+                          - child.children.each do |grandchild|
+                            %li
+                              = link_to "#", class: " category__child--name" do
+                                = grandchild.name 
