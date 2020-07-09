@@ -1,3 +1,15 @@
+%nav.sign-header__content__progress
+  %ol
+    %li.sign-header__content__progress__text__active{ id: "first" }
+      会員情報
+      .sign-header__content__progress__round__active
+    %li.sign-header__content__progress__text
+      送付先住所入力
+      .sign-header__content__progress__round__passive
+    %li.sign-header__content__progress__text{ id: "end" }
+      登録完了
+      .sign-header__content__progress__round__passive
+
 .input
   %h1.input__name
     会員情報入力
@@ -60,4 +72,4 @@
         %br
         = f.date_field :birth_day, {class: "input__group__content__box"}
       .input__group__content__btn
-        = f.submit '登録', class: "input__group__content__btn__tag"
+        = f.submit '次に進む', class: "input__group__content__btn__tag"
