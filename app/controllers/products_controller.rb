@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    @category_parent_array = ["---"]
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def create
@@ -16,13 +18,19 @@ class ProductsController < ApplicationController
     end
   end
 
+  def get_category_children
+    @category_children = Category.find(params[:parent_id]).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find(params[:child_id]).children
+  end
+
   private
   def product_params
     params.permit(:name, :text, :category_id, :charges, :price, :postage, :area, :user_id, brand_id: [:product_id], status_id: [:product_id], day_id: [:product_id])
   end
 
-  def set_categories
-    @categories = Category.where(ancestry: nil)
-  end
+  
 
 end

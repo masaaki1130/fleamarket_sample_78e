@@ -3,9 +3,11 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root 'items#index'
-  resources :products, only: [:new, :create] do
+  resources :products do
   collection do
     get 'search'
+    get 'category/get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
+    get 'category/get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
   end
 end
   resources :users, only: :show
