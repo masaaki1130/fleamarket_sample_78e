@@ -65,6 +65,7 @@ gem 'active_hash'
 gem 'ancestry'
 gem 'carrierwave'
 gem 'devise'
+gem 'fog-aws'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem "haml-rails"
