@@ -12,22 +12,16 @@
               = image_tag ("icon-search 1.png"), class: "searchicon"
     .tag
       %ul.lefttag
-        %li.lefttag__item.lefttag__item--first
-          = link_to "カテゴリ", "#", class: "post", id: "category__search search__btn" 
-          %ul.category__parent.category__list
-            - @parent.each do |parent|
-              %li
-                = link_to "#", class: "category__parent--name" do
-                  = parent.name
-
+        %li.lefttag__item.leftta__item--first
+          = link_to "カテゴリ", "#", method: :delete, class: "post"
         %li.lefttag__item
-          = link_to "ブランド", "#", class: "post"
+          = link_to  "ブランド", "#", class: "post"
       - if user_signed_in?
         %ul.righttag
           %li.righttag__item.righttag__item--login
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post"
           %li.righttag__item.righttag__item--new
-            = link_to "マイページ", mypage_index_path, class: "post"
+            = link_to  "マイページ", mypage_index_path, class: "post"
       - else
         %ul.righttag
           %li.righttag__item

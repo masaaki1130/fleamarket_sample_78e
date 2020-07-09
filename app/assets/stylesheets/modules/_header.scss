@@ -53,32 +53,6 @@
         border-radius: 4px;
       }
     }
-
-    .tag {
-      font-size: 14px;
-      display: flex;
-      margin-bottom: 10px;
-
-      .lefttag {
-        position: relative;
-        display: flex;
-
-        .lefttag__item {
-          color: #333;
-          text-decoration: none !important;
-          line-height: 32px;
-          background-position: center right;
-          background-repeat: no-repeat;
-          background-size: 18px;
-          padding-right: 30px;
-
-          .lefttag__item--first {
-            text-decoration: none;
-            padding: 0;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -90,6 +64,34 @@
 img {
   width: 100%;
   vertical-align: bottom;
+}
+
+
+
+.tag {
+  font-size: 14px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.lefttag {
+  position: relative;
+  display: flex;
+
+  &__item {
+    color: #333;
+    text-decoration: none !important;
+    line-height: 32px;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding-right: 30px;
+  }
+
+  &--first {
+    text-decoration: none;
+    padding: 0;
+  }
 }
 
 .righttag {
