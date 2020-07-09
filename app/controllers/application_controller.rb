@@ -18,7 +18,11 @@ class ApplicationController < ActionController::Base
   def set_ancestry
     @parent = Category.where(ancestry: nil)
   end
-  
+
+  def after_sign_out_path_for(resource)
+    root_path
+  end
+
   protected
 
   def configure_permitted_parameters
