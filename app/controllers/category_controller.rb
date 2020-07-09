@@ -4,9 +4,9 @@ class CategoryController < ApplicationController
     - @parents.each do |parent|
       =parent.name
     - parent.children.each do |child|
-      =child.name     
+      =child.name
     - child.children.each do |grandchild|
       =grandchild.name
-                                   
+
   end
 end
