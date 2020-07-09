@@ -12,17 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2020_07_04_051818) do
 
-  create_table "addresses", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
     t.string "given_name", null: false
     t.string "family_name_kana", null: false
     t.string "given_name_kana", null: false
     t.string "postal", null: false
-    t.string "prefecture_id", null: false
+    t.string "prefecture", null: false
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name"
-    t.string "phone_number"
+    t.integer "room_number"
+    t.integer "phone_number"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -63,7 +64,6 @@ ActiveRecord::Schema.define(version: 2020_07_04_051818) do
     t.bigint "category_id", null: false
     t.bigint "brand_id"
     t.bigint "status_id", null: false
-    t.string "charges", null: false
     t.integer "price", null: false
     t.string "postage", null: false
     t.string "area", null: false
