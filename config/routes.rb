@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     get 'search'
     get 'category/get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
     get 'category/get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
-
   end
+end
 
   resources :user
   resources :card, only: :index
