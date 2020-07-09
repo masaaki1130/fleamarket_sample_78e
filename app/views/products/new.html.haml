@@ -27,7 +27,8 @@
           %ul.main-contents__detail__category__title
             %li.main-contents__detail__category__title__main カテゴリー
             %li.main-contents__detail__category__title__sub 必須
-          = f.text_field :category_id, class: 'main-contents__detail__category__text'
+          .main-contents__detail__category__choose
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
         = form_with model: @product, class:'main-contents__detail__brand', local: true do |f|
           %ul.main-contents__detail__brand__title
             %li.main-contents__detail__brand__title__main ブランド
