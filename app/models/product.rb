@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
   belongs_to :user
-  belongs_to :category
+  belongs_to :category, optional: true
   belongs_to :brand
   belongs_to :status
   belongs_to :day
@@ -15,8 +15,8 @@ class Product < ApplicationRecord
   validates :images, presence: true
   validates :text, presence: true
   validates :category_id, presence: true
+  validates :brand_id, presence: true
   validates :status_id, presence: true
-  validates :charges, presence: true
   validates :price, presence: true
   validates :postage, presence: true
   validates :area, presence: true

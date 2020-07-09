@@ -231,30 +231,39 @@
     }
     &__price {
       padding: 40px;
-      border-bottom: 1px solid #efefef;
       position: relative;
-      display: flex;
-      justify-content: space-between;
       &__title {
         display: flex;
         align-items: center;
         line-height: 20px;
+        margin-bottom: 20px;
         &__sub {
           color: white;
           padding: 0px 3px;
           border-radius: 2px;
           background-color: red;
           margin-left: 5px;
+          margin-right: auto;
+        }
+        &__form {
+          margin-right: 5px;
+        }
+        &__box {
+          height: 48px;
+          outline: none;
+          padding: 0 16px;
         }
       }
-      &__text {
-        margin-top: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        height: 48px;
-        outline: none;
-        padding: 0 16px;
+      &-fee {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #efefef;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+      &__profit {
+        display: flex;
+        justify-content: space-between;
       }
     }
     &__button {
@@ -270,8 +279,8 @@
         color: white;
         padding: 0px 3px;
         border-radius: 4px;
-        background-color: red;
-        outline: none;
+        background-color: #3ccace;
+        border: none;
       }
     }
   }
