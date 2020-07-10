@@ -7,9 +7,5 @@ class CategoryController < ApplicationController
       =child.name
     - child.children.each do |grandchild|
       =grandchild.name
-<<<<<<< Updated upstream
-                                   
-=======
->>>>>>> Stashed changes
   end
 end
