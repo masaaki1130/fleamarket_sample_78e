@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   before_action :set_categories, only: [:edit, :update]
-
+  
+  def index
+    @products = Product.all
+  end
 
   def new
     unless user_signed_in?
@@ -31,7 +34,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :text, :category_id, :price, :postage, :area, :brand_id, :status_id, :day_id, images_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :text, :category_id, :price, :postage, :area, :brand_id, :status_id, :sell, :day_id, images_attributes: [:image]).merge(user_id: current_user.id)
   end
 
 

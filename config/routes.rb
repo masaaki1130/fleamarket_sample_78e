@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post 'destinations', to: 'users/registrations#create_destinations'
   end
 
-  root 'items#index'
+  root 'products#index'
   
   resources :products do
   collection do
