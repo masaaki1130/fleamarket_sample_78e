@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   root 'items#index'
-  
+
   resources :products do
   collection do
     get 'search'
