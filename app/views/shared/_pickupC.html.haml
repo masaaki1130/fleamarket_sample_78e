@@ -25,6 +25,5 @@
                   %li
                     %p (税込)
                   %li
-                    -# - if product.sell == 0 ?
-                    -# - binding.pry
-                    -#   sold out
+                    - if product.sell == true
+                      %p.sold soldout
