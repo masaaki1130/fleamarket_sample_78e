@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_categories, only: [:edit, :update]
-  
+
   def index
-    @products = Product.all
+    @products = Product.all.order("created_at DESC").limit(3)
   end
 
   def new
