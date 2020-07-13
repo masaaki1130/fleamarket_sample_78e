@@ -66,8 +66,8 @@
 |brand_id|integer||
 |sell|boolean|null: false, default: false|
 |price|integer|null: false|
-|postage|string|null: false|
-|area|string|null: false|
+|shipping_cost_id|integer|null: false|
+|prefecture_id|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 |status_id|integer|null: false|
 |day_id|integer|null: false|
@@ -76,6 +76,7 @@
 - belongs_to_active_hash :brand
 - belongs_to_active_hash :status
 - belongs_to_active_hash :day
+- belongs_to_active_hash :shipping_cost
 - has_many :purchases
 - belongs_to :user
 - belongs_to :category
