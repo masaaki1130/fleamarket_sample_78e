@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :brand
   belongs_to_active_hash :status
   belongs_to_active_hash :day
+  belongs_to_active_hash :shipping_cost
   has_many :purchases
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
@@ -16,8 +17,8 @@ class Product < ApplicationRecord
   validates :category_id, presence: true
   validates :status_id, presence: true
   validates :price, presence: true
-  validates :postage, presence: true
-  validates :area, presence: true
+  validates :shipping_cost_id, presence: true
+  validates :prefecture_id, presence: true
   validates :day_id, presence: true
   validates :user_id, presence: true
 
