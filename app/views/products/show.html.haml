@@ -77,7 +77,7 @@
           .items__item
             = link_to product_path(@product), data: {turbolinks: "false"} do
               .items__item__image
-                = image_tag @product.images[1].image.url, alt: "画像"
+                = image_tag @product.images[0].image.url, alt: "画像"
               .items__item__info
                 .items__item__info__name
                   = @product.name
@@ -93,7 +93,7 @@
           .items__item
             = link_to product_path(@product), data: {turbolinks: "false"} do
               .items__item__image
-                = image_tag @product.images[1].image.url, alt: "画像"
+                = image_tag @product.images[0].image.url, alt: "画像"
               .items__item__info
                 .items__item__info__name
                   = @product.name
