@@ -23,6 +23,14 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    if @product.destroy
+      redirect_to root_path
+    else
+      redirect_to product_path(product)
+    end
+  end
+
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
   end
