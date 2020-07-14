@@ -12,9 +12,9 @@
 |phone_number|integer|null: false|
 ### Association
 - has_many :purchases
-- has_many :cards
 - has_many :addresses
 - has_many :products
+- has_one :card
 
 
 ### addressesテーブル
@@ -49,10 +49,11 @@
 ### cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
+
+|user_id|integer|null: false, foreign_key: true|
+|customer_id|string|null: false|
 |card_id|string|null: false, foreign_key: true|
-|castomer_id|string|null: false|
-### Association
+
 - belongs_to :user
 
 
