@@ -50,9 +50,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|card_token|integer|null: false|
-|card_token|date|null: false|
-|card_token|string|null: false|
+|card_id|string|null: false, foreign_key: true|
+|castomer_id|string|null: false|
 ### Association
 - belongs_to :user
 
