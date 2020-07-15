@@ -12,14 +12,14 @@
         .itemBox {
           background-color: #fff;
           padding: 24px 40px 40px;
-          %h2.itemBox_name {
+          h2.itemBox_name {
             text-align: center;
             font-weight: bold;
             font-size: 24px;
           }
           .itemBox_body {
             margin: 16px 0 0;
-            %ul {
+            ul {
               display: flex;
               position: relative;
             }
@@ -34,13 +34,13 @@
               font-weight: bold;
               margin: 0 10px 0 0;
             }
-          }    
+          }
           .itemBox_price-detail {
             font-size: 16px;
           }
             .span {
               font-size: 16px;
-            }  
+            }
             .span {
               font-size: 16px;
             }
@@ -80,16 +80,16 @@
                     font-size: 14px;
                   }
                 }
-              }    
+              }
             }
-          }        
+          }
           .optionalArea {
             display: flex;
             justify-content: space-between;
-            %ul {
+            ul {
               margin: 10px 0 0;
-              display:flex
-              %li.likeBtn {
+              display:flex;
+              li.likeBtn {
                 margin-right: auto;
                 padding: 6px 10px;
                 border-radius: 40px;
@@ -97,20 +97,19 @@
                 border: 1px solid #ffb340;
               }
             }
-            %ul.optional {
+            ul.optional {
               margin: 10px 0 0;
               display: flex;
-            
-              %li.optionalBtn {
+              li.optionalBtn {
                 font-size: 14px;
-                %a {
+                a {
                   padding: 6px 10px;
                   display: inline-block;
                   border-radius: 4px;
                   color: #333;
                   border: 1px solid #333;
                   text-decoration: none;
-                  %i.f-flag {
+                  i.f-flag {
                     display: inline-block;
                     font: normal normal normal 14px/1 FontAwesome;
                     font-size: inherit;
@@ -120,9 +119,9 @@
                 }
               }
             }
-          }         
+          }
         }
-      }    
+      }
     }
-  } 
+  }
 }

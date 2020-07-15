@@ -1,6 +1,4 @@
-https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 ### usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
@@ -14,30 +12,31 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 |phone_number|integer|null: false|
 ### Association
 - has_many :purchases
-- has_many :cards
 - has_many :addresses
+- has_many :products
+- has_one :card
+
 
 ### addressesテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |family_name|string|null: false|
 |family_name_kana|string|null: false|
-|first_name|string|null: false|
-|first_name_kana|string|null: false|
+|given_name|string|null: false|
+|given_name_kana|string|null: false|
 |user_id|references|null: false, foreign_key: true|
-|postal|integer|null: false|
-|prefecture|string|null: false|
+|postal|string|null: false|
+|prefecture_id|string|null: false|
 |city|string|null: false|
-|house_number|integer|null: false|
+|house_number|string|null: false|
 |building_name|string||
-|room_number|integer||
-|phone_number|integer||
+|phone_number|string||
 ### Association
 - belongs_to :user
+- belongs_to_active_hash :prefecture
+
 
 ### purchasesテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
@@ -48,15 +47,15 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 
 
 ### cardsテーブル
-
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|card_token|integer|null: false|
-|card_token|date|null: false|
-|card_token|string|null: false|
-### Association
+
+|user_id|integer|null: false, foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false, foreign_key: true|
+
 - belongs_to :user
+
 
 ### productsテーブル
 |Column|Type|Options|
@@ -64,39 +63,28 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 |name|string|null: false|
 |text|text|null: false|
 |category_id|references|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
-|sell|boolean|null: false|
-|charges|string|null: false|
+|brand_id|integer||
+|sell|boolean|null: false, default: false|
 |price|integer|null: false|
-|postage|string|null: false|
-|area|string|null: false|
+|shipping_cost_id|integer|null: false|
+|prefecture_id|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
-|status_id|references|null: false, foreign_key: true|
-|day_id|references|null: false, foreign_key: true|
+|status_id|integer|null: false|
+|day_id|integer|null: false|
 ### Association
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :brand
+- belongs_to_active_hash :status
+- belongs_to_active_hash :day
+- belongs_to_active_hash :shipping_cost
+- has_many :purchases
 - belongs_to :user
-- belongs_to :brand
 - belongs_to :category
-- belongs_to :status
-- belongs_to :day
 - has_many :images
-### statusesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|status|string|null: false|
+- accepts_nested_attributes_for :images, allow_destroy: true
 
-### Association
-- has_many :products
 
-###  daysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|day|string|null: false|
-
-### Association
-- has_many :products
-
-###　imagesテーブル
+### imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
@@ -104,12 +92,6 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 ### Association
 - belongs_to :product
 
-### brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-### Association
-- has_many :products
 
 ### categoriesテーブル
 |Column|Type|Options|
@@ -117,3 +99,4 @@ https://github.com/masaaki1130/fleamarket_sample_78e/files/4850091/ER.1.pdf
 |name|string|null: false|
 ### Association
 - has_many :products
+- has_ancestry

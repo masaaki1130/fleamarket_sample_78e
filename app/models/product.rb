@@ -1,25 +1,24 @@
 class Product < ApplicationRecord
-
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
+  belongs_to_active_hash :brand
+  belongs_to_active_hash :status
+  belongs_to_active_hash :day
+  belongs_to_active_hash :shipping_cost
   has_many :purchases
-  has_many :images
+  has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
   belongs_to :user
   belongs_to :category
-  belongs_to :brand
-  belongs_to :status
-  belongs_to :day
 
   validates :name, presence: true
   validates :images, presence: true
   validates :text, presence: true
   validates :category_id, presence: true
-  validates :brand_id, presence: true
   validates :status_id, presence: true
   validates :price, presence: true
-  validates :postage, presence: true
-  validates :area, presence: true
+  validates :shipping_cost_id, presence: true
+  validates :prefecture_id, presence: true
   validates :day_id, presence: true
   validates :user_id, presence: true
 

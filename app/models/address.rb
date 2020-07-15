@@ -1,6 +1,7 @@
 class Address < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
+  belongs_to :user
 
   validates :postal, presence: true
   validates :prefecture_id, presence: true
@@ -10,6 +11,4 @@ class Address < ApplicationRecord
   validates :given_name, presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
   validates :family_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :given_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
-
-  belongs_to :user
 end

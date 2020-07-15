@@ -1,6 +1,11 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:edit, :update]
-  before_action :set_category, only: :edit
+
+  before_action :set_category, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
+
+  def index
+    @products = Product.all.order("created_at DESC").limit(3)
+  end
 
   def new
     unless user_signed_in?
@@ -8,8 +13,6 @@ class ProductsController < ApplicationController
     end
     @product = Product.new
     @product.images.new
-    @category_parent_array = ["---"]
-    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def create
@@ -35,6 +38,12 @@ class ProductsController < ApplicationController
       redirect_to root_path
     else
       render :edit
+
+  def destroy
+    if @product.destroy
+      redirect_to root_path
+    else
+      redirect_to product_path(product)
     end
   end
 
@@ -46,12 +55,17 @@ class ProductsController < ApplicationController
     @category_grandchildren = Category.find(params[:child_id]).children
   end
 
-  private
-  def product_params
-    params.require(:product).permit(:name, :text, :category_id, :price, :postage, :area, :brand_id, :status_id, :day_id, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+  def show
+    @same_user_items = Product.where(user_id: @product.user_id).order(created_at: "DESC").limit(3)
+    @same_category_items = Product.where(category_id: @product.category_id).order(created_at: "DESC").limit(3)
   end
 
-  def set_product
+  private
+  def product_params
+    params.require(:product).permit(:name, :text, :category_id, :price, :shipping_cost_id, :prefecture_id, :brand_id, :status_id, :sell, :day_id, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+  end
+
+  def set_item
     @product = Product.find(params[:id])
   end
 
