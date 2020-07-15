@@ -12,9 +12,9 @@
 |phone_number|integer|null: false|
 ### Association
 - has_many :purchases
-- has_many :cards
 - has_many :addresses
 - has_many :products
+- has_one :card
 
 
 ### addressesテーブル
@@ -49,11 +49,11 @@
 ### cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|card_token|integer|null: false|
-|card_token|date|null: false|
-|card_token|string|null: false|
-### Association
+
+|user_id|integer|null: false, foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false, foreign_key: true|
+
 - belongs_to :user
 
 
@@ -66,8 +66,8 @@
 |brand_id|integer||
 |sell|boolean|null: false, default: false|
 |price|integer|null: false|
-|postage|string|null: false|
-|area|string|null: false|
+|shipping_cost_id|integer|null: false|
+|prefecture_id|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 |status_id|integer|null: false|
 |day_id|integer|null: false|
@@ -76,6 +76,7 @@
 - belongs_to_active_hash :brand
 - belongs_to_active_hash :status
 - belongs_to_active_hash :day
+- belongs_to_active_hash :shipping_cost
 - has_many :purchases
 - belongs_to :user
 - belongs_to :category
