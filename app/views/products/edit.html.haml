@@ -61,17 +61,17 @@
             %ul.main-contents__shipping__postage__title
               %li.main-contents__shipping__postage__title__main 配送料の負担
               %li.main-contents__shipping__postage__title__sub 必須
-            = f.select :postage, {'送料込み(出品者負担)': 1, '着払い(購入者負担)': 2}, { include_blank: '選択して下さい'}, {class: 'main-contents__shipping__postage__text'}
+            = f.collection_select :shipping_cost_id, ShippingCost.all, :id, :cost, { include_blank: '選択して下さい'}, {class: 'main-contents__shipping__postage__text'}
           .main-contents__shipping__area
             %ul.main-contents__shipping__area__title
               %li.main-contents__shipping__area__title__main 発送元の地域
               %li.main-contents__shipping__area__title__sub 必須
-            = f.collection_select :area, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}, {class: 'main-contents__shipping__area__text'}
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択して下さい"}, {class: 'main-contents__shipping__area__text'}
           .main-contents__shipping__day
             %ul.main-contents__shipping__day__title
               %li.main-contents__shipping__day__title__main 発送までの日数
               %li.main-contents__shipping__day__title__sub 必須
-            = f.collection_select :day_id, Day.all, :id, :name, {include_blank: "選択して下さい"}, {class: 'main-contents__shipping__day__text'}
+            = f.collection_select :day_id, Day.all, :id, :date, {include_blank: "選択して下さい"}, {class: 'main-contents__shipping__day__text'}
         .main-contents__price
           .main-contents__price__title
             .main-contents__price__title__main
@@ -96,4 +96,4 @@
                 .main-contents__price__profit-calculation
                   = f.number_field :price, style: "display: none", id: "price"
         .main-contents__button
-          = f.submit '出品する', class: 'main-contents__button__sell'
+          = f.submit '変更する', class: 'main-contents__button__sell'
