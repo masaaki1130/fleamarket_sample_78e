@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
 
   def edit
     @grandchild_category = @product.category
-    @child_category = @grandchild_category.parent 
+    @child_category = @grandchild_category.parent
     @category_parent = @child_category.parent
     @category = Category.find(params[:id])
     @category_children = @product.category.parent.parent.children
@@ -38,6 +38,8 @@ class ProductsController < ApplicationController
       redirect_to root_path
     else
       render :edit
+    end
+  end
 
   def destroy
     if @product.destroy
@@ -69,7 +71,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def set_category  
+  def set_category
     @category_parent_array = Category.where(ancestry: nil)
   end
 
