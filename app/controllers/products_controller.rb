@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_categories, only: [:edit, :update]
+
+  before_action :set_category, only: [:edit, :update]
   before_action :set_item, only: [:edit, :update, :show, :destroy]
 
   def index
@@ -22,6 +23,21 @@ class ProductsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @grandchild_category = @product.category
+    @child_category = @grandchild_category.parent 
+    @category_parent = @child_category.parent
+    @category = Category.find(params[:id])
+    @category_children = @product.category.parent.parent.children
+    @category_grandchildren = @product.category.parent.children
+  end
+
+  def update
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit
 
   def destroy
     if @product.destroy
@@ -46,13 +62,15 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :text, :category_id, :price, :shipping_cost_id, :prefecture_id, :brand_id, :status_id, :sell, :day_id, images_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :text, :category_id, :price, :shipping_cost_id, :prefecture_id, :brand_id, :status_id, :sell, :day_id, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_item
     @product = Product.find(params[:id])
   end
 
-
+  def set_category  
+    @category_parent_array = Category.where(ancestry: nil)
+  end
 
 end
