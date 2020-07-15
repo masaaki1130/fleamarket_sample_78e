@@ -97,3 +97,64 @@
     }
   }
 }
+.information {
+  height: calc(100vh - 290px);
+  background-color: #F5F5F5;
+  position: relative;
+  &__detail {
+    height: 75%;
+    width: 70%;
+    @include card_information;
+    &__card {
+      height: 28%;
+      font-size: 22px;
+      position: relative;
+      border-bottom: 1px solid #ccc;
+      background-color: white;
+      label {
+        font-weight: bold;
+        background-color: white;
+        @include card_information;
+      }
+      &__number {
+        height: 72%;
+        background-color: white;
+        &__date {
+          background-color: white;
+          height: 60%;
+          &__content {
+            text-align: center;
+            font-size: 19px;
+            padding-top: 8%;
+          }
+          &__expire {
+            text-align: center;
+            font-size: 19px;
+            padding-top: 2%;
+          }
+        }
+        &__button {
+          text-align: center;
+          margin-top: 15px;
+          button {
+            @include form;
+            width: 250px;
+            background-color: #3ccace;
+            color: white;
+            font-size: 15px;
+          }
+          button:hover {
+            background-color: #B5F3E1;
+          }
+        }
+        &-return {
+          padding-top: 20px;
+          text-align: center;
+          &__button {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
