@@ -13,10 +13,10 @@ class CardController < ApplicationController
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
-      description: '登録テスト',
-      email: current_user.email,
-      card: params['payjp-token'],
-      metadata: { user_id: current_user.id }
+        description: '登録テスト',
+        email: current_user.email,
+        card: params['payjp-token'],
+        metadata: { user_id: current_user.id }
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: params['card-token'])
       if @card.save
@@ -33,7 +33,7 @@ class CardController < ApplicationController
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
-      card.delete 
+      card.delete
     end
     redirect_to action: "new"
   end
