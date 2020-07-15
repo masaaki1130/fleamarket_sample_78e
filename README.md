@@ -1,3 +1,19 @@
+![フリーマーケットサイト](https://gyazo.com/e9a2d42a04c4948dbda82b73cb4566b0)
+
+<h2 align="center">FURIMA</h2>
+<dl>
+  <dt>:link:主な使用言語</dt>
+<p align="center">
+  <a href="https://www.ruby-lang.org/ja/"><img src="https://i1.wp.com/qs.nndo.jp/wp-content/uploads/2017/06/ruby.png?w=393" width="80px;" /></a>
+  <br>
+  <a href="https://railsguides.jp/getting_started.html"><img src="https://kuromame-blog.com/wp-content/uploads/rails-768x432.png" height="45px;" /></a>
+  <a href="http://haml.info/"><img src="http://haml.info/images/haml.png" height="45px;" /></a>
+  <a href="https://sass-lang.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/144px-Sass_Logo_Color.svg.png" height="40px;" /></a>
+  <a href="https://jquery.com/"><img src="https://syncer.jp/storage/web/brand-logos/static/dst/jquery-logo-001.png" height="45px;" /></a>
+  <a href="https://github.co.jp/"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="45px;" /></a>
+  <a href="https://aws.amazon.com/jp/"><img src="https://d0.awsstatic.com/logos/powered-by-aws.png" height="45px;" /></a>
+</p>
+</dl>
 ### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -49,7 +65,6 @@
 ### cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-
 |user_id|integer|null: false, foreign_key: true|
 |customer_id|string|null: false|
 |card_id|string|null: false, foreign_key: true|
