@@ -1,4 +1,7 @@
-![e9a2d42a04c4948dbda82b73cb4566b0](https://user-images.githubusercontent.com/66311435/87505898-0096ae80-c6a5-11ea-9ebc-c1748710be6d.png)
+
+![FURIMA](https://user-images.githubusercontent.com/66311435/87513342-8ae60f00-c6b3-11ea-90a6-e912fbe605fb.jpg)
+
+
 
 
 <h2 align="center">FURIMA</h2>
@@ -78,17 +81,15 @@
   <li></li>
   <li></li>
 </ul>
-__________________________________________________________________
 
-## :link: サイト紹介
+## :globe_with_meridians: サイト紹介
 <ul>
   <li>ユーザー名:admin</li>
   <li>パスワード:password</li>
   <li>IPアドレス:http://54.238.23.37/</li>
 </ul>
-__________________________________________________________________
 
-## :link: インストール方法
+## :computer: インストール方法
 1.このリポジトリを複製
 $ git clone https://github.com/masaaki1130/fleamarket_sample_78e.git
 
@@ -108,8 +109,9 @@ $ rails db:seed
 6.アプリケーションの起動
 $ rails s
 👉http://localhost:3000
-__________________________________________________________________
 
+
+## :page_facing_up: ER図
 
 ![データベース ER 図 (フリマ) (1)](https://user-images.githubusercontent.com/66311435/87507377-46a14180-c6a8-11ea-9d7b-21def4986223.png)
 
