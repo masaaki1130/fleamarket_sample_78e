@@ -28,7 +28,7 @@ class CardController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除する
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     if card.present? 
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
@@ -52,6 +52,6 @@ class CardController < ApplicationController
 
   private
   def set_card
-    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+    @card = Card.find_by(user_id: current_user.id) if Card.where(user_id: current_user.id).present?
   end
 end
