@@ -9,7 +9,7 @@
 ## :link: アプリケーションの概要
 <ul>
   <li>メルカリクローンのフリーマーケットサイトです。</li>
-  <li>TECH::EXPERT 78期短期集中コースeチームで作成。</li>
+  <li>TECH CAMP 78期短期集中コースEチームで作成。</li>
   <li>作成期間 2020/6/29 ~ 2020/7/23</li>
 </ul>
 
@@ -84,8 +84,8 @@
 
 ## :globe_with_meridians: サイト紹介
 <ul>
-  <li>ユーザー名:admin</li>
-  <li>パスワード:password</li>
+  <li>ユーザー名:masaaki</li>
+  <li>パスワード:hayate1130</li>
   <li>IPアドレス:http://54.238.23.37/</li>
 </ul>
 
