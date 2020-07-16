@@ -112,8 +112,7 @@ $ rails s
 
 ## :page_facing_up: ER図
 
-![データベース ER 図 (フリマ) (1)](https://user-images.githubusercontent.com/66311435/87507377-46a14180-c6a8-11ea-9d7b-21def4986223.png)
-
+![データベース ER 図 (FURIMA) ](https://user-images.githubusercontent.com/66311435/87666902-6ddd3900-c7a4-11ea-9926-53a4ff401bc0.png)
 
 ### usersテーブル
 |Column|Type|Options|
@@ -133,7 +132,6 @@ $ rails s
 - has_many :products
 - has_one :card
 
-
 ### addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -152,7 +150,6 @@ $ rails s
 - belongs_to :user
 - belongs_to_active_hash :prefecture
 
-
 ### purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -162,16 +159,14 @@ $ rails s
 - belongs_to :user
 - belongs_to :product
 
-
 ### cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |customer_id|string|null: false|
 |card_id|string|null: false, foreign_key: true|
-
+### Association
 - belongs_to :user
-
 
 ### productsテーブル
 |Column|Type|Options|
@@ -199,7 +194,6 @@ $ rails s
 - has_many :images
 - accepts_nested_attributes_for :images, allow_destroy: true
 
-
 ### imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -207,7 +201,6 @@ $ rails s
 |product_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
-
 
 ### categoriesテーブル
 |Column|Type|Options|
