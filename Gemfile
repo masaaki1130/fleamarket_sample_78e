@@ -68,6 +68,7 @@ gem 'devise'
 gem 'dotenv-rails'
 gem 'fog-aws'
 gem 'font-awesome-sass'
+gem "gretel"
 gem 'jquery-rails'
 gem "haml-rails"
 gem 'jquery-rails'
