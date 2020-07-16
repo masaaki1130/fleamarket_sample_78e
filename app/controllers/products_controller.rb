@@ -97,5 +97,4 @@ class ProductsController < ApplicationController
     @destination = Address.find(current_user.id)
   end
 
-
 end

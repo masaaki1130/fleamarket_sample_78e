@@ -17,12 +17,12 @@ class PurchaseController < ApplicationController
   def pay
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-    :amount => @product.price,
-    :customer => @card.customer_id,
-    :currency => 'jpy',
-  )
-  @product.update(buyer_id: @product.buyer_id = current_user.id)
-  redirect_to action: 'done'
+      amount: @product.price,
+      customer: @card.customer_id,
+      currency: 'jpy',
+    )
+    @product.update(buyer_id: @product.buyer_id = current_user.id)
+    redirect_to action: 'done'
   end
 
   def done
@@ -40,5 +40,4 @@ class PurchaseController < ApplicationController
   def set_card
     @card = Card.find_by(user_id: current_user.id)
   end
-
 end
