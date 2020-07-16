@@ -63,11 +63,9 @@ class ProductsController < ApplicationController
   end
 
   def buy
-    @user = current_user
   end
 
   def purchase
-
   end
 
   private
