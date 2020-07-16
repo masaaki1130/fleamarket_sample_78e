@@ -1,0 +1,18 @@
+.main
+  .main-contents
+    .main-contents__title 購入内容の確認
+    .main-contents__products
+      .main-contents__products__picture
+        =image_tag(@product.images[0].image.url,class:"main-contents__products__picture")
+      .main-contents__products__name
+        .main-contents__products__name__main
+          =@product.name
+        .main-contents__products__name__sub
+          %span.main-contents__products__name__sub-fee 送料込み(税込)
+          = number_to_currency(@product.price,format: "%u%n",unit:"¥",precision: 0)
+    .main-contents__price
+      .main-contents__price__main 支払金額
+      = number_to_currency(@product.price,format: "%u%n",unit:"¥",precision: 0)
+    .main-contents__button
+      = submit_tag("購入する", class:"main-contents__button__main")
+  
