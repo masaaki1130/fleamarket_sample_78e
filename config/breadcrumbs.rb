@@ -30,4 +30,3 @@ crumb :products_new do
   link "出品ページ"
   parent :root
 end
-end
