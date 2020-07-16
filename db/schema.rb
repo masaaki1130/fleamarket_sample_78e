@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_015919) do
     t.bigint "category_id", null: false
     t.integer "brand_id"
     t.integer "status_id", null: false
-    t.boolean "sell", default: false, null: false
+    t.integer "buyer_id"
     t.integer "price", null: false
     t.integer "shipping_cost_id", null: false
     t.integer "prefecture_id", null: false

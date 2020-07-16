@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
+  require 'payjp'
 
+  before_action :authenticate_user!, only: [:buy_confirmation, :edit, :update, :destroy]
   before_action :set_category, only: [:edit, :update]
-  before_action :set_item, only: [:edit, :update, :show, :destroy, :buy, :purchase]
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
+  before_action :set_card, except: [:index, :new, :create, :show, :edit, :update, :destroy]
+  before_action :set_destination, except: [:index, :new, :create, :show]
 
   def index
     @products = Product.all.order("created_at DESC").limit(3)
@@ -62,15 +66,18 @@ class ProductsController < ApplicationController
     @same_category_items = Product.where(category_id: @product.category_id).order(created_at: "DESC").limit(3)
   end
 
-  def buy
-  end
+  def buy_confirmation
+    @product = Product.find(params[:id])
+    return unless @card.present?
 
-  def purchase
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
   end
 
   private
   def product_params
-    params.require(:product).permit(:name, :text, :category_id, :price, :shipping_cost_id, :prefecture_id, :brand_id, :status_id, :sell, :day_id, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :text, :category_id, :price, :shipping_cost_id, :prefecture_id, :brand_id, :status_id, :buyer_id, :day_id, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_item
@@ -81,4 +88,11 @@ class ProductsController < ApplicationController
     @category_parent_array = Category.where(ancestry: nil)
   end
 
+  def set_card
+    @card = Card.find_by(user_id: current_user.id)
+  end
+
+  def set_destination
+    @destination = Address.find(current_user.id)
+  end
 end

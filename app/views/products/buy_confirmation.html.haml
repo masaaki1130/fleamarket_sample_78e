@@ -1,0 +1,59 @@
+%main.buy-main
+  .buy-confirmation
+    %h2.buy-confirmation__text
+      購入内容の確認
+    .buy-confirmation__item-box
+      .buy-confirmation__item-box__img
+        = image_tag @product.images[0].image.url
+      .buy-confirmation__item-box__info
+        %p.buy-confirmation__item-box__info__name
+          商品名
+          = @product.name
+        %p.buy-confirmation__item-box__info__price
+          %span.price
+            ¥
+            = @product.price
+          %span.tax-and-delivery-fee
+            (税込)送料込み
+    .buy-confirmation__buy-content
+      .buy-confirmation__buy-content__inner-box
+        = form_tag "#" do
+          .price-box
+            .price-box__text
+              支払い金額
+            .price-box__price
+              ¥
+              = @product.price
+          .user-info-box
+            .user-info-box__info
+              %ul.user-info-box__info__list
+                %li.user-info-box__info__list__bold
+                  支払い方法
+                %li.user-info-box__info__list__text
+                  クレジットカード
+                %li.user-info-box__info__list__text
+                  = "**** **** **** " + @default_card_information.last4
+                %li.user-info-box__info__list__text
+                  有効期限
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
+              = link_to "変更する", root_path, {class: "user-info-box__info__edit"}
+          .user-info-box
+            .user-info-box__info
+              %ul.user-info-box__info__list
+                %li.user-info-box__info__list__bold
+                  配送先
+                %li.user-info-box__info__list__text
+                  〒
+                  = @destination.postal
+                %li.user-info-box__info__list__text
+                  = @destination.city
+                  = @destination.house_number
+                %li.user-info-box__info__list__text
+                  = @destination.family_name
+                  = @destination.given_name
+              = link_to "変更する", "#", {class: "user-info-box__info__edit"}
+          = link_to index_path do
+            .purchase-confirmation
+              %input{ type: 'submit', value: '購入する', class: 'purchase-confirmation__submit' }

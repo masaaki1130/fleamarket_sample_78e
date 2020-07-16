@@ -10,6 +10,9 @@
           = link_to product_path(product) do
             %figure.pickuplist--image
               = image_tag product.images.first.image.url, alt: "image_url", class:"new-img"
+                - if product.buyer_id.present?
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner SOLD
             .pickuplist__body
               %h3.name
                 = product.name
@@ -25,5 +28,3 @@
                   %li
                     %p (税込)
                   %li
-                    - if product.sell == true
-                      %p.sold soldout
