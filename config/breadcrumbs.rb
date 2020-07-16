@@ -7,15 +7,11 @@ end
 crumb :mypage do
   link "マイページ", mypage_index_path
 end
+
 # 会員情報入力ページ(1ページ)
 crumb :users_new do
   link "新規会員登録", new_user_registration_path
   parent :root
-end
-# 会員情報入力ページ(2ページ)
-crumb :users_new2 do
-  link "新規会員登録2", new_destinations_path
-  parent :users_new
 end
 
 #クレジットカード登録
