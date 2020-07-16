@@ -85,9 +85,9 @@
 
 ## :globe_with_meridians: サイト紹介
 <ul>
-  <li>ユーザー名:masaaki</li>
-  <li>パスワード:hayate1130</li>
-  <li>IPアドレス:http://54.238.23.37/</li>
+  <li>ユーザー名 : masaaki</li>
+  <li>パスワード : hayate1130</li>
+  <li>IPアドレス : http://54.238.23.37/</li>
 </ul>
 
 ## :computer: インストール方法
