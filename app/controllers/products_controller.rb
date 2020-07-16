@@ -96,5 +96,4 @@ class ProductsController < ApplicationController
   def set_destination
     @destination = Address.find(current_user.id)
   end
-
 end

@@ -19,7 +19,7 @@ class PurchaseController < ApplicationController
     Payjp::Charge.create(
       amount: @product.price,
       customer: @card.customer_id,
-      currency: 'jpy',
+      currency: 'jpy'
     )
     @product.update(buyer_id: @product.buyer_id = current_user.id)
     redirect_to action: 'done'
