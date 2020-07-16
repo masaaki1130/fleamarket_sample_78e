@@ -45,8 +45,7 @@
                 %li.user-info-box__info__list__bold
                   配送先
                 %li.user-info-box__info__list__text
-                  〒
-                  = @destination.postal
+                  %h3="〒#{@destination.postal}"
                 %li.user-info-box__info__list__text
                   = @destination.prefecture.name
                   = @destination.city
