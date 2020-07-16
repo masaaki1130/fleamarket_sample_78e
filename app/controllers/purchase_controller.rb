@@ -3,6 +3,7 @@ class PurchaseController < ApplicationController
 
   before_action :set_item
   before_action :set_card
+  before_action :set_destination, except: [:index, :new, :create, :show]
 
   def index
     if @card.present?
@@ -39,5 +40,9 @@ class PurchaseController < ApplicationController
 
   def set_card
     @card = Card.find_by(user_id: current_user.id)
+  end
+
+  def set_destination
+    @destination = Address.find(current_user.id)
   end
 end
