@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get "products/buy_confirmation/:id", to: 'products#buy_confirmation', as: 'buy_confirmation'
+  get 'purchase/index/:id', to: 'purchase#index', as: 'index'
+  post 'pay/:id', to: 'purchase#pay'
+  get 'purchase/done/:id', to: 'purchase#done'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -21,11 +25,24 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :products do
+    get "buy/confirmation", to: 'products#buy_confirmation'
+  end
+
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
+    end
+  end
+
+  resources :products do
+    resources :purchase, only: [:index] do
+      collection do
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
     end
   end
 

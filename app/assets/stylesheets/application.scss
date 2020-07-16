@@ -12,12 +12,15 @@
 @import "modules/topkey";
 @import "modules/topmain";
 @import "modules/topmiddle";
+@import "mixin/show";
+@import "products/buy_confirmation";
 @import "mypage/logout";
 @import "mypage/mypage";
+@import "done";
 @import "modules/topmiddle";
 @import "users/sign_in";
 @import "users/sign_up";
 @import "modules/products";
-@import "mixin/show";
 @import "products/show";
+@import "purchase";
 
