@@ -153,16 +153,6 @@ $ rails s
 - belongs_to_active_hash :prefecture
 
 
-### purchasesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :product
-
-
 ### cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -180,7 +170,7 @@ $ rails s
 |text|text|null: false|
 |category_id|references|null: false, foreign_key: true|
 |brand_id|integer||
-|sell|boolean|null: false, default: false|
+|buyer_id|integer|foreign_key: true|
 |price|integer|null: false|
 |shipping_cost_id|integer|null: false|
 |prefecture_id|integer|null: false|
