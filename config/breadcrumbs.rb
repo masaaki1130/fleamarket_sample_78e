@@ -11,8 +11,18 @@ crumb :users_new do
   parent :root
 end
 
-crumb :card do
-  link "クレジットカード", new_card_path
+crumb :card_new do
+  link "お支払い方法", new_card_path
+  parent :mypage
+end
+
+crumb :card_show do
+  link "お支払い方法", card_path
+  parent :mypage
+end
+
+crumb :logout do
+  link "ログアウト", logout_index_path
   parent :mypage
 end
 
@@ -23,10 +33,5 @@ end
 
 crumb :products_show do
   link "商品詳細"
-  parent :root
-end
-
-crumb :products_new do
-  link "出品ページ"
   parent :root
 end
