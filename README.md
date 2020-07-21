@@ -115,6 +115,8 @@ $ rails s
 
 ![データベース ER 図 (FURIMA) ](https://user-images.githubusercontent.com/66311435/87666902-6ddd3900-c7a4-11ea-9926-53a4ff401bc0.png)
 
+## :link: DB設計
+
 ### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
